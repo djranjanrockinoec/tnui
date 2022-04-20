@@ -8,11 +8,11 @@ const DetailsScreen = props => {
     const { navigation, route } = props;
     const [number, setNumber] = useState(false);
 
-    const onEnterPress = () => {
-        setNumber(true);
+    const onDonePress = () => {
+        navigation.navigate('Dashboard');
     }
 
-    const onRegisterPress = () => {
+    const onLaterPress = () => {
         navigation.goBack();
     }
     return (
@@ -25,20 +25,22 @@ const DetailsScreen = props => {
             </View>
             <View style={{ flex: 1, }}>
                 <InputBox
+                    inputTitle='Name'
                     keyboardType='numeric'
                     placeholderText='What do we call you ?'
                 />
                 <View style={{
+                    alignSelf: 'flex-end',
                     backgroundColor: '#1B92AD',
                     borderRadius: 10,
                     width: 150,
-                    marginLeft: 165,
+                    marginRight: 10,
                     marginVertical: 25,
                 }}>
                     <Button
                         title="Done"
                         color="white"
-                        onPress={onRegisterPress}
+                        onPress={onDonePress}
                     />
                 </View>
             </View>
@@ -54,7 +56,7 @@ const DetailsScreen = props => {
                 <Button
                     title="Later"
                     color="black"
-                    onPress={onRegisterPress}
+                    onPress={onLaterPress}
                 />
             </View>
         </View >

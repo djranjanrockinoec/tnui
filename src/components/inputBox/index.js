@@ -1,27 +1,33 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, TextInput } from "react-native";
 
-const InputBox = ({ keyboardType, placeholderText }) => {
+const InputBox = ({ keyboardType, placeholderText, inputTitle }) => {
     const [number, onChangeNumber] = React.useState(null);
 
     return (
-        <TextInput
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder={placeholderText}
-            keyboardType={keyboardType}
-        />
+        <View>
+            <Text style={{ marginHorizontal: 12, }}>{inputTitle}</Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={onChangeNumber}
+                value={number}
+                placeholder={placeholderText}
+                keyboardType={keyboardType}
+                placeholderTextColor={'#858585'}
+            />
+        </View>
+
     );
 };
 
 const styles = StyleSheet.create({
     input: {
-        height: 40,
+        height: 45,
         width: 300,
         margin: 12,
+        textAlign: 'center',
+        color: '#858585',
         borderColor: 'white',
-        paddingHorizontal: 50,
         borderWidth: 1,
         alignContent: 'center',
         justifyContent: 'center',
