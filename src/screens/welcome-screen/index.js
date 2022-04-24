@@ -10,7 +10,7 @@ const WelcomeScreen = props => {
 
     const onEnterPress = () => {
         setNumber(true);
-        Alert.alert('Wrong OTP entered !!');
+        // Alert.alert('Wrong OTP entered !!');
     }
 
     const onRegisterPress = () => {
@@ -33,7 +33,7 @@ const WelcomeScreen = props => {
                     <>
                         <InputBox
                             keyboardType='numeric'
-                            placeholderText='Enter OTP'
+                            placeholderText='enter OTP'
                         />
                         <View style={{ flexDirection: "row", justifyContent: 'space-between', marginHorizontal: 12 }}>
                             <Text style={{ fontSize: 10 }}>cancel</Text>
@@ -43,11 +43,12 @@ const WelcomeScreen = props => {
 
                 }
                 <View style={{
+                    alignSelf: number ? 'flex-end' : 'center',
                     backgroundColor: '#1B92AD',
                     borderRadius: 10,
                     width: 150,
-                    marginHorizontal: 80,
                     marginVertical: 25,
+
                 }}>
                     {number ?
                         <Button

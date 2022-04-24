@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* tinieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* tinieTests.m */; };
-		0572A850C4ECA811DF982480 /* libPods-tinie-tinieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0B17B43B853A0AA968765F /* libPods-tinie-tinieTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3BD5B3178A257F1C41EC2E39 /* libPods-tinie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FA5390F88735B58D6AF6A6 /* libPods-tinie.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		7835FAC9A4FDD14DDBA30458 /* libPods-tinie-tinieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC95D90CA35119967CBC9C2 /* libPods-tinie-tinieTests.a */; };
+		CAF3521B022A9A3062267616 /* libPods-tinie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCF2FA51A970395B00D26A7 /* libPods-tinie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +28,36 @@
 		00E356EE1AD99517003FC87E /* tinieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tinieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* tinieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tinieTests.m; sourceTree = "<group>"; };
-		0E0B17B43B853A0AA968765F /* libPods-tinie-tinieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinie-tinieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* tinie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tinie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = tinie/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = tinie/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tinie/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = tinie/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = tinie/main.m; sourceTree = "<group>"; };
-		7C4A6F96C94240BEE3A64ECE /* Pods-tinie-tinieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie-tinieTests.release.xcconfig"; path = "Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C2C6BA184514943B61377D8 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		48763F9BA83E4136B852DF65 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		520B568DA7864077AF0A1D3C /* Pods-tinie-tinieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie-tinieTests.release.xcconfig"; path = "Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests.release.xcconfig"; sourceTree = "<group>"; };
+		59891B82A10192C8AAE54A0F /* Pods-tinie-tinieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie-tinieTests.debug.xcconfig"; path = "Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61072DFAD86947EF9305DBE4 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		7B14465E38494BD8ADB5054F /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = tinie/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8DE84FE868414FB766819CFB /* Pods-tinie-tinieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie-tinieTests.debug.xcconfig"; path = "Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests.debug.xcconfig"; sourceTree = "<group>"; };
-		98FA5390F88735B58D6AF6A6 /* libPods-tinie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAA6D78CF4CA0CC7AB536B7E /* Pods-tinie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie.debug.xcconfig"; path = "Target Support Files/Pods-tinie/Pods-tinie.debug.xcconfig"; sourceTree = "<group>"; };
-		DB8BB27C6832F2619FF49596 /* Pods-tinie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie.release.xcconfig"; path = "Target Support Files/Pods-tinie/Pods-tinie.release.xcconfig"; sourceTree = "<group>"; };
+		8880A4B3D62547FBAD173689 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		88A47C9C5C364ED986BC09F4 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		9B52DECFA112404E93EFFBEB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		9D3D4804E9A0BC085C841423 /* Pods-tinie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie.release.xcconfig"; path = "Target Support Files/Pods-tinie/Pods-tinie.release.xcconfig"; sourceTree = "<group>"; };
+		9DC95D90CA35119967CBC9C2 /* libPods-tinie-tinieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinie-tinieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACF07129AB7E43EA83027DE8 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		AEAA77D75A6AD889D7496F07 /* Pods-tinie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tinie.debug.xcconfig"; path = "Target Support Files/Pods-tinie/Pods-tinie.debug.xcconfig"; sourceTree = "<group>"; };
+		B04CC871DC364C929A2ACEF3 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		B1DC82BE51CA4FCA9281C393 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		C3C6D7B69C41455A8B584D3E /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		C4C1676774D0453BBFA56533 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		CBDD4BF6B19E4C5F91FD9F0C /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		DEF5815CA9334BC7B3737542 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		E322914D1F7543D6BED211D7 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		E8B30481579649C68CCC544D /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EFCF2FA51A970395B00D26A7 /* libPods-tinie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tinie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0572A850C4ECA811DF982480 /* libPods-tinie-tinieTests.a in Frameworks */,
+				7835FAC9A4FDD14DDBA30458 /* libPods-tinie-tinieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD5B3178A257F1C41EC2E39 /* libPods-tinie.a in Frameworks */,
+				CAF3521B022A9A3062267616 /* libPods-tinie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,22 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				98FA5390F88735B58D6AF6A6 /* libPods-tinie.a */,
-				0E0B17B43B853A0AA968765F /* libPods-tinie-tinieTests.a */,
+				EFCF2FA51A970395B00D26A7 /* libPods-tinie.a */,
+				9DC95D90CA35119967CBC9C2 /* libPods-tinie-tinieTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3EB6681099F9D5BF4DADB3BE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BAA6D78CF4CA0CC7AB536B7E /* Pods-tinie.debug.xcconfig */,
-				DB8BB27C6832F2619FF49596 /* Pods-tinie.release.xcconfig */,
-				8DE84FE868414FB766819CFB /* Pods-tinie-tinieTests.debug.xcconfig */,
-				7C4A6F96C94240BEE3A64ECE /* Pods-tinie-tinieTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -133,7 +135,8 @@
 				00E356EF1AD99517003FC87E /* tinieTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				3EB6681099F9D5BF4DADB3BE /* Pods */,
+				8A50341D59F0A380B4A79CA5 /* Pods */,
+				ACEAD7007A794094AE8DDE48 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +152,40 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8A50341D59F0A380B4A79CA5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEAA77D75A6AD889D7496F07 /* Pods-tinie.debug.xcconfig */,
+				9D3D4804E9A0BC085C841423 /* Pods-tinie.release.xcconfig */,
+				59891B82A10192C8AAE54A0F /* Pods-tinie-tinieTests.debug.xcconfig */,
+				520B568DA7864077AF0A1D3C /* Pods-tinie-tinieTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ACEAD7007A794094AE8DDE48 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C3C6D7B69C41455A8B584D3E /* AntDesign.ttf */,
+				C4C1676774D0453BBFA56533 /* Entypo.ttf */,
+				DEF5815CA9334BC7B3737542 /* EvilIcons.ttf */,
+				88A47C9C5C364ED986BC09F4 /* Feather.ttf */,
+				E322914D1F7543D6BED211D7 /* FontAwesome.ttf */,
+				B04CC871DC364C929A2ACEF3 /* FontAwesome5_Brands.ttf */,
+				48763F9BA83E4136B852DF65 /* FontAwesome5_Regular.ttf */,
+				3C2C6BA184514943B61377D8 /* FontAwesome5_Solid.ttf */,
+				B1DC82BE51CA4FCA9281C393 /* Fontisto.ttf */,
+				61072DFAD86947EF9305DBE4 /* Foundation.ttf */,
+				CBDD4BF6B19E4C5F91FD9F0C /* Ionicons.ttf */,
+				9B52DECFA112404E93EFFBEB /* MaterialCommunityIcons.ttf */,
+				ACF07129AB7E43EA83027DE8 /* MaterialIcons.ttf */,
+				8880A4B3D62547FBAD173689 /* Octicons.ttf */,
+				7B14465E38494BD8ADB5054F /* SimpleLineIcons.ttf */,
+				E8B30481579649C68CCC544D /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,12 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "tinieTests" */;
 			buildPhases = (
-				9FEA79A96FDF719BC4467E5F /* [CP] Check Pods Manifest.lock */,
+				0D0999CE62FB8FC82C9FC479 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				BCC391F3E850D7BFB6097C77 /* [CP] Embed Pods Frameworks */,
-				E0F9727F061C7219544EB8B8 /* [CP] Copy Pods Resources */,
+				BF6D68B8CDD2673C6DF6896A /* [CP] Embed Pods Frameworks */,
+				F8BE19A2ED604FD983CA4DF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +214,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "tinie" */;
 			buildPhases = (
-				BD43D03CF89F60867E544E2C /* [CP] Check Pods Manifest.lock */,
+				0E68C14AF8F8B893DBC87257 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
-				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				073E50F929E0C045FFEB559A /* [CP] Embed Pods Frameworks */,
-				D49F67148BEC3A68F2B6122F /* [CP] Copy Pods Resources */,
+				CF6E395D4D7D5F220E379758 /* [CP] Embed Pods Frameworks */,
+				468AE114BE8841B8FAA586A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,15 +275,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		13B07F8E1A680F5B00A75B9A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -265,24 +292,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		073E50F929E0C045FFEB559A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9FEA79A96FDF719BC4467E5F /* [CP] Check Pods Manifest.lock */ = {
+		0D0999CE62FB8FC82C9FC479 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,24 +314,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCC391F3E850D7BFB6097C77 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD43D03CF89F60867E544E2C /* [CP] Check Pods Manifest.lock */ = {
+		0E68C14AF8F8B893DBC87257 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -343,7 +336,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D49F67148BEC3A68F2B6122F /* [CP] Copy Pods Resources */ = {
+		468AE114BE8841B8FAA586A2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,7 +353,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E0F9727F061C7219544EB8B8 /* [CP] Copy Pods Resources */ = {
+		BF6D68B8CDD2673C6DF6896A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tinie-tinieTests/Pods-tinie-tinieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6E395D4D7D5F220E379758 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tinie/Pods-tinie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8BE19A2ED604FD983CA4DF4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -429,7 +456,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DE84FE868414FB766819CFB /* Pods-tinie-tinieTests.debug.xcconfig */;
+			baseConfigurationReference = 59891B82A10192C8AAE54A0F /* Pods-tinie-tinieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -456,7 +483,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C4A6F96C94240BEE3A64ECE /* Pods-tinie-tinieTests.release.xcconfig */;
+			baseConfigurationReference = 520B568DA7864077AF0A1D3C /* Pods-tinie-tinieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -480,7 +507,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAA6D78CF4CA0CC7AB536B7E /* Pods-tinie.debug.xcconfig */;
+			baseConfigurationReference = AEAA77D75A6AD889D7496F07 /* Pods-tinie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +533,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB8BB27C6832F2619FF49596 /* Pods-tinie.release.xcconfig */;
+			baseConfigurationReference = 9D3D4804E9A0BC085C841423 /* Pods-tinie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
