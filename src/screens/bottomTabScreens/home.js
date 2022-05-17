@@ -4,9 +4,12 @@ import CategoryTile from "../../components/categoryTile";
 import HighLights from "../../components/highlights";
 import Styles from "./home-style";
 import Feather from 'react-native-vector-icons/Feather';
+import { Shadow } from 'react-native-shadow-2';
 
 
-const Home = () => {
+const Home = props => {
+
+    const { routes, navigation } = props;
 
     const styles = Styles();
 
@@ -55,7 +58,7 @@ const Home = () => {
             image: 'https://thehhub.com/wp-content/uploads/2018/11/cristian-newman-153712-unsplash-1152x608.jpg',
         },
         {
-            title: 'AYURVEDA',
+            title: 'AYURVEDA CLINIC',
             image: 'https://media.istockphoto.com/photos/indian-ayurvedic-dietary-supplement-called-chyawanprash-is-a-cooked-picture-id697860312?k=20&m=697860312&s=612x612&w=0&h=7O5GBwjBZggBFOLtFcN8ClOceHBycij-FD4lMSrgf4E=',
         },
         {
@@ -118,7 +121,7 @@ const Home = () => {
 
     const renderCategoryTile = ({ item }) => {
         return (
-            <CategoryTile heading={item.title} source={{ uri: item.image }} />
+            <CategoryTile heading={item.title} source={{ uri: item.image }} navigation={navigation} />
         );
     };
     return (
@@ -130,13 +133,14 @@ const Home = () => {
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
-            <View style={{ borderWidth: 1, height: 50, borderRadius: 10, borderColor: '#A9A9A9', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Shadow viewStyle={{ borderWidth: 1, height: 50, borderRadius: 10, borderColor: '#A9A9A9', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                 <TextInput
                     placeholder="looking for something? search here"
                     style={{ flex: 1, textAlign: 'center' }}
                 />
                 <Feather name="search" size={24} style={{ paddingTop: 5, paddingHorizontal: 5 }} color='#A9A9A9' />
-            </View>
+            </Shadow>
+
             <Text style={{ textDecorationLine: 'underline', marginLeft: 5, marginVertical: 10, }}>Personal Care</Text>
             <FlatList
                 data={personalCareData}

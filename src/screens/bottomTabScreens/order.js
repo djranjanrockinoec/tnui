@@ -1,11 +1,10 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import CarouselCard from "../../components/carouselCard";
 
 const Orders = () => {
     return (
-        <View style={styles.container}>
-            <Text>Order Screen</Text>
-        </View>
+        <CarouselCard />
     );
 
 };
