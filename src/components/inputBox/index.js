@@ -16,7 +16,6 @@ const InputBox = ({ keyboardType, placeholderText, inputTitle }) => {
                 placeholderTextColor={'#858585'}
             />
         </View>
-
     );
 };
 
