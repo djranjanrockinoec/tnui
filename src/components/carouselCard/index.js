@@ -8,6 +8,9 @@ import CarouselCardItem, {
 } from "./carouselCardItem";
 import createStyles from './style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+//import LinearGradient from "react-native-linear-gradient";
+import { Shadow } from 'react-native-shadow-2';
+import TinieButton from "../button";
 
 
 const { width, height } = Dimensions.get('window');
@@ -74,22 +77,22 @@ const CarouselCard = ({ key, onButtonPress }) => {
             <View style={styles.details}>
                 <View style={styles.title}>
                     <View style={{ flex: 1 }}>
-                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>
+                        <Text style={{ fontSize: 14, fontWeight: 'bold' }}>
                             DENSITY UNISEX SALON AND SPA
                         </Text>
-                        <Text>
+                        <Text style={{ fontSize: 10, fontWeight: '500', marginTop: 2 }}>
                             HSR Layout
                         </Text>
                     </View>
                     <View style={{ flex: 0.5, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                         <Ionicons name="location-outline" size={20} />
-                        <Text>
+                        <Text style={{ fontSize: 10, fontWeight: '600' }}>
                             3.2 Kms
                         </Text>
                     </View>
                     <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'center', }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
-                            <Text style={{ fontSize: 24, paddingRight: 5, }}>
+                            <Text style={{ fontSize: 24, paddingRight: 5, color: '#1394CC' }}>
                                 4.1
                             </Text>
                             <Ionicons name="star" size={20} color={'orange'} />
@@ -99,37 +102,37 @@ const CarouselCard = ({ key, onButtonPress }) => {
                         </Text>
                     </View>
                 </View>
-                <View style={styles.subTitle}>
-                    <View style={{ flex: 1 }}>
-                        <Text style={{ fontSize: 16, fontWeight: '500' }}>
+                {/* <LinearGradient start={{ x: 0.30, y: 1 }}
+                    end={{ x: 1, y: 0.50 }} colors={['#F2EBAF', '#ffffff']} style={styles.subTitle}>
+                    <View style={{ flex: 1.25 }}>
+                        <Text style={{ fontSize: 12, fontWeight: '500' }}>
                             • MEN - HAIRCUT + HAIR WASH + HAIR SETTING AND STYLING
                         </Text>
-                        <Text style={{ fontSize: 16, fontWeight: '500' }}>
+                        <Text style={{ fontSize: 12, fontWeight: '700', marginTop: 7, }}>
                             • 4700/-
                         </Text>
                     </View>
-                    <View style={{ flex: 0.5, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold' }} >
-                            •
-                        </Text>
-                        <Text style={{ paddingTop: 5, }}>
-                            45 mins
+                    <View style={{ flex: 0.5, }}>
+                        <Text style={{ paddingTop: 5, paddingLeft: 15, fontSize: 10, fontWeight: '600' }}>
+                            • 45 mins
                         </Text>
                     </View>
                     <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'center', }}>
-                        <View style={{
-                            alignSelf: 'flex-end',
-                            backgroundColor: '#FF506B',
-                            width: 80,
-                        }}>
-                            <Button
-                                title="BOOK"
-                                color="#FF506B"
-                                onPress={onButtonPress}
-                            />
-                        </View>
+
+                        <TinieButton
+                            title="BOOK"
+                            style={{
+                                alignSelf: 'flex-end',
+                                backgroundColor: '#FF506B',
+                                width: 80,
+                                height: 40,
+                            }}
+                            onButtonPress={onButtonPress}
+                            textStyle={{ color: '#ffffff' }}
+                        />
+
                     </View>
-                </View>
+                </LinearGradient> */}
             </View>
 
         </View >
@@ -138,35 +141,35 @@ const CarouselCard = ({ key, onButtonPress }) => {
 
 const styles = StyleSheet.create({
     container: {
-        height: height / 1.75,
+        height: height / 2.6,
         borderRadius: 10,
         width: width - 15,
         margin: 8,
     },
     carousel: {
-        flex: 2.5,
+        flex: 3.5,
     },
     details: {
         flex: 1,
-        // backgroundColor: 'orange',
-    },
-    title: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        padding: 10,
-        borderColor: 'grey',
-        borderLeftWidth: 1.5,
-        borderRightWidth: 1.5,
-    },
-    subTitle: {
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        padding: 10,
-        backgroundColor: '#F2EBAF',
         borderColor: 'grey',
         borderLeftWidth: 1.5,
         borderRightWidth: 1.5,
         borderBottomWidth: 1.5,
+        borderBottomLeftRadius: 4,
+        borderBottomRightRadius: 4,
+    },
+    title: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        padding: 8,
+    },
+    subTitle: {
+        width: width - 20,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        padding: 10,
+        paddingRight: 5,
+        borderColor: 'grey',
     },
 });
 

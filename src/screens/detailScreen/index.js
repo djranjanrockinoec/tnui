@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, TouchableOpacity, ScrollView, Text, StyleSheet, Image, Button, Alert } from 'react-native'
 import InputBox from "../../components/inputBox";
 import tinieLogo from '../../assets/images/tinie-LOGO.png';
+import TinieButton from "../../components/button";
 
 const DetailsScreen = props => {
 
@@ -37,28 +38,20 @@ const DetailsScreen = props => {
                     marginRight: 10,
                     marginVertical: 25,
                 }}>
-                    <Button
+                    <TinieButton
                         title="Done"
-                        color="white"
-                        onPress={onDonePress}
+                        textStyle={{ color: '#ffffff' }}
+                        style={styles.doneButton}
+                        onButtonPress={onDonePress}
                     />
                 </View>
             </View>
-            <View style={{
-                backgroundColor: '#34EBEB',
-                borderRadius: 10,
-                borderColor: 'black',
-                borderWidth: 1,
-                width: 150,
-                marginLeft: 150,
-                marginBottom: 25,
-            }}>
-                <Button
-                    title="Later"
-                    color="black"
-                    onPress={onLaterPress}
-                />
-            </View>
+            <TinieButton
+                title="Later"
+                textStyle={{ color: '#00000' }}
+                style={styles.laterButton}
+                onButtonPress={onLaterPress}
+            />
         </View >
 
     );
@@ -70,7 +63,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#34EBEB',
-    }
+    },
+    laterButton: {
+        backgroundColor: '#34EBEB',
+        borderRadius: 10,
+        borderColor: 'black',
+        borderWidth: 0.75,
+        width: 150,
+        height: 50,
+        marginLeft: 150,
+        marginBottom: 25,
+    },
+    doneButton: { backgroundColor: '#1B92AD', width: 150, height: 50 }
 })
 
 export default DetailsScreen;

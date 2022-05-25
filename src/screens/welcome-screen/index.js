@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, TouchableOpacity, ScrollView, Text, StyleSheet, Image, Button, Alert } from 'react-native'
 import InputBox from "../../components/inputBox";
 import tinieLogo from '../../assets/images/tinie-LOGO.png';
+import TinieButton from "../../components/button";
 
 const WelcomeScreen = props => {
 
@@ -44,24 +45,21 @@ const WelcomeScreen = props => {
                 }
                 <View style={{
                     alignSelf: number ? 'flex-end' : 'center',
-                    backgroundColor: '#1B92AD',
-                    borderRadius: 10,
-                    width: 150,
                     marginVertical: 25,
-
                 }}>
                     {number ?
-                        <Button
+                        <TinieButton
                             title={"Register"}
-                            color="white"
-                            onPress={onRegisterPress}
+                            style={{ backgroundColor: '#1B92AD', width: 150, height: 50, marginRight: 10, }}
+                            onButtonPress={onRegisterPress}
+                            textStyle={{ color: '#ffffff' }}
                         /> :
-                        <Button
+                        <TinieButton
                             title={"Enter"}
-                            color="white"
-                            onPress={onEnterPress}
+                            style={{ backgroundColor: '#1B92AD', width: 150, height: 50 }}
+                            onButtonPress={onEnterPress}
+                            textStyle={{ color: '#ffffff' }}
                         />}
-
                 </View>
 
             </View>
