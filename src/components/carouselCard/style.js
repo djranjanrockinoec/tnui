@@ -6,7 +6,7 @@ const CreateStyles = () => {
     return StyleSheet.create({
         imageContainer: {
             shadowColor: '#F7DDE1',
-            borderRadius: 8,
+            borderRadius: 20,
             justifyContent: 'center',
             shadowOffset: {
                 width: 0,
@@ -21,10 +21,12 @@ const CreateStyles = () => {
         image: {
             // flexDirection: 'row',
             width: width - 15,
-            height: 400,
+            height: 340,
+            borderRadius: 6,
         },
         container: {
             justifyContent: 'center',
+            borderRadius: 20,
         },
         dotstyle: {
             backgroundColor: '#F7DDE1',
