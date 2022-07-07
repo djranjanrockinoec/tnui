@@ -129,7 +129,7 @@ const Home = props => {
             <FlatList
                 data={highLightData}
                 renderItem={renderHighlights}
-                keyExtractor={item => item.id}
+                keyExtractor={(item, index) => item.title}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
@@ -145,7 +145,7 @@ const Home = props => {
             <FlatList
                 data={personalCareData}
                 renderItem={renderCategoryTile}
-                keyExtractor={item => item.id}
+                keyExtractor={(item, index) => item.title}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
@@ -153,7 +153,7 @@ const Home = props => {
             <FlatList
                 data={homeCareData}
                 renderItem={renderCategoryTile}
-                keyExtractor={item => item.id}
+                keyExtractor={(item, index) => item.title}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
@@ -161,7 +161,7 @@ const Home = props => {
             <FlatList
                 data={fitnessData}
                 renderItem={renderCategoryTile}
-                keyExtractor={item => item.id}
+                keyExtractor={(item, index) => item.title}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />

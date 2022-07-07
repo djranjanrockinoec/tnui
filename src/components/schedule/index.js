@@ -49,11 +49,11 @@ const Schedule = () => {
             <View style={styles.subContainer}>
                 <View style={{ flex: 1, }}>
                     {
-                        data.map(details => {
+                        data.map(data => {
                             return (
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Text style={[styles.dateText, { color: details.day === today && '#1814DF' }]}>{details.day}</Text>
-                                    <Text style={[styles.dateText, { color: details.status === 'CLOSED' ? 'red' : details.day === today && '#1814DF' }]}>{details.status}</Text>
+                                <View style={{ flexDirection: 'row' }} key={data.day} >
+                                    <Text style={[styles.dateText, { color: data.day === today && '#1814DF' }]}>{data.day}</Text>
+                                    <Text style={[styles.dateText, { color: data.status === 'CLOSED' ? 'red' : data.day === today && '#1814DF' }]}>{data.status}</Text>
                                 </View>
                             );
                         })
