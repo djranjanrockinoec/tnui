@@ -20,7 +20,7 @@ import Geolocation from 'react-native-geolocation-service';
 navigator.geolocation = require('@react-native-community/geolocation');
 import AntDesignIcons from 'react-native-vector-icons/AntDesign'
 import { request, PERMISSIONS, RESULTS } from 'react-native-permissions';
-import Geocoder from 'react-native-geocoding';
+import Geocoder from 'react-native-geocoding'
 import { PLACES_API } from "@env"
 
 
