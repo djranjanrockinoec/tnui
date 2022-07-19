@@ -26,7 +26,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import OnBoarding from './src/navigations/onBoardingStack';
 
-const Section = ({ children, title }): Node => {
+const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -65,7 +65,7 @@ const OnBoardingScreensList = () => (
   </Stack.Navigator>
 );
 
-const App: () => Node = () => {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {

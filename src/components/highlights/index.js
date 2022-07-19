@@ -11,7 +11,7 @@ const HighLights = props => {
                 style={styles.tinyLogo}
                 source={source}
             />
-            <Text style={{ paddingVertical: 5 }}>{heading}</Text>
+            <Text style={{ paddingVertical: 5,color:"#222222",fontWeight:'700'}}>{heading}</Text>
         </TouchableOpacity >
     );
 };
@@ -19,8 +19,9 @@ const HighLights = props => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5,
+        justifyContent: 'flex-start',
+        marginHorizontal:5,
+        marginVertical:10
     },
     tinyLogo: {
         width: 60,
