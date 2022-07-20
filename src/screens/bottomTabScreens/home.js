@@ -6,7 +6,8 @@ import {
     SectionList,
     Dimensions,
     FlatList,
-    ActivityIndicator
+    ActivityIndicator,
+    PermissionsAndroid
 } from 'react-native'
 // import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 
@@ -28,66 +29,133 @@ const Home = props => {
     const { routes, navigation } = props;
     const styles = Styles();
     const [isLoading, setisLoading] = useState(true)
-    const [geo, setGeo] = useState({})
+    const [long, setLong] = useState(0)
+    const [lat, setLat] = useState(0)
+    const [address, setAddress] = useState('')
+
 
 
     useEffect(() => {
 
-        const requestPermissions = async () => {
-            request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION, {
-                title: 'Tinie',
-                message: 'Grant Tinie Access to Location',
-                buttonNeutral: "Ask Me Later",
-                buttonNegative: "Cancel",
-                buttonPositive: "OK"
-            }).then((result) => {
-                if (result == RESULTS.GRANTED) {
-                    console.log(result)
-                } else {
-                    console.log(result)
-                }
-            })
+        // const requestPermissions = async () => {
+        //     request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION, {
+        //         title: 'Tinie',
+        //         message: 'Grant Tinie Access to Location',
+        //         buttonNeutral: "Ask Me Later",
+        //         buttonNegative: "Cancel",0
+        //         buttonPositive: "OK"
+        //     }).then((result) => {
+        //         if (result == RESULTS.GRANTED) {
+        //             setPermission(true)
+        //             console.log(result)
+        //         } else {
+        //             console.log(result)
+        //         }
+        //     })
 
+        // }
+
+        const requestPermissions = async () => {
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                    {
+                        title: 'Tinie',
+                        message: 'Grant Tinie Access to Location',
+                        buttonNeutral: "Ask Me Later",
+                        buttonNegative: "Cancel",
+                        buttonPositive: "OK"
+                    }
+                )
+
+                if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                    Geolocation.getCurrentPosition(
+                        (position) => {
+                            setLong(position.coords.longitude)
+                            setLat(position.coords.latitude)
+                            // console.log(geo);
+
+                        },
+                        (error) => {
+                            // See error code charts below.
+                            console.log(error.code, error.message);
+                            setisLoading(false)
+                        },
+                        { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+
+                    );
+
+                    Geocoder.init(PLACES_API, { language: "en" })
+
+                    setTimeout(() => {
+                        // Geocoder.init(PLACES_API, { language: "en" })
+
+                        Geocoder.from(lat, long)
+                            .then(json => {
+                                const address =
+                                    json.results[0].address_components[1].long_name + ", " +
+                                    json.results[0].address_components[2].long_name + ", " +
+                                    json.results[0].address_components[3].long_name + ", " +
+                                    json.results[0].address_components[4].long_name + ", " +
+                                    json.results[0].address_components[5].long_name + ", " +
+                                    json.results[0].address_components[6].long_name + ". "
+                                    ;
+                                console.log(address)
+                                setAddress(address)
+                                setisLoading(false)
+                            })
+                            .catch(error => console.log({long, lat}));
+                        setisLoading(false)
+                    }, 500);
+
+                } 
+
+            } catch (err) {
+                console.log(err)
+            }
         }
 
         requestPermissions()
-        Geolocation.getCurrentPosition(
-            (position) => {
-                setGeo({
-                    longitude: position.coords.longitude,
-                    latitude: position.coords.latitude
-                })
-                setisLoading(false)
-                // console.log(geo);
 
-            },
-            (error) => {
-                // See error code charts below.
-                console.log(error.code, error.message);
-                setisLoading(false)
-            },
-            { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-        );
 
         // setTimeout(() => {
+        //     Geolocation.getCurrentPosition(
+        //         (position) => {
+        //             setGeo({
+        //                 longitude: position.coords.longitude,
+        //                 latitude: position.coords.latitude
+        //             })
+        //             setisLoading(false)
+        //             // console.log(geo);
+
+        //         },
+        //         (error) => {
+        //             // See error code charts below.
+        //             console.log(error.code, error.message);
+        //             setisLoading(false)
+        //         },
+        //         { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+        //     );
+
+
         //     Geocoder.init(PLACES_API, { language: "en" })
 
         //     Geocoder.from(geo)
         //         .then(json => {
-        //             var addressComponent = 
-        //             json.results[0].address_components[1].long_name+", "+
-        //             json.results[0].address_components[2].long_name+", "+
-        //             json.results[0].address_components[3].long_name+", "+
-        //             json.results[0].address_components[4].long_name+", "+
-        //             json.results[0].address_components[5].long_name+", "+
-        //             json.results[0].address_components[6].long_name+". "
-        //             ;
+        //             var addressComponent =
+        //                 json.results[0].address_components[1].long_name + ", " +
+        //                 json.results[0].address_components[2].long_name + ", " +
+        //                 json.results[0].address_components[3].long_name + ", " +
+        //                 json.results[0].address_components[4].long_name + ", " +
+        //                 json.results[0].address_components[5].long_name + ", " +
+        //                 json.results[0].address_components[6].long_name + ". "
+        //                 ;
         //             console.log(addressComponent);
         //         })
         //         .catch(error => console.warn(error));
-        // }, 200);
+        // }, 3000);
 
-    }, [])
+    })
 
 
         const highLightData = {
@@ -264,7 +332,7 @@ const Home = props => {
                                 <>
 
                                 <GooglePlacesAutocomplete
-                                    placeholder='Search Your Location'
+                                    placeholder={address}
                                     minLength={2}
                                     listViewDisplayed='auto'
                                     renderDescription={row => row.description || row.formatted_address || row.name}
@@ -307,6 +375,7 @@ const Home = props => {
                                         }
                                     }}
                                 />
+                                
                                         <FlatList
                                             horizontal
                                             data={section.data}
