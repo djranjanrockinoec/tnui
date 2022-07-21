@@ -20,6 +20,9 @@ target 'tinie' do
   pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
   pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
 
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
@@ -29,7 +32,11 @@ target 'tinie' do
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+=======
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+>>>>>>> master
 =======
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
 >>>>>>> master
