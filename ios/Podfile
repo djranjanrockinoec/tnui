@@ -11,7 +11,16 @@ target 'tinie' do
     # to enable hermes on iOS, change `false` to `true` and then install pods
     :hermes_enabled => false
   )
+<<<<<<< HEAD
   pod 'GoogleMaps'
+=======
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+
+>>>>>>> master
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
@@ -19,7 +28,11 @@ target 'tinie' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+<<<<<<< HEAD
   pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+=======
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+>>>>>>> master
 
   target 'tinieTests' do
     inherit! :complete

@@ -4,7 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.airbnb.android.react.maps.MapsPackage;
+=======
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import com.horcrux.svg.SvgPackage;
+>>>>>>> master
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;

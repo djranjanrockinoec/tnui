@@ -12,7 +12,7 @@ const CategoryTile = props => {
                 source={source}
             />
             <View style={styles.imageWrap} >
-                <Text style={{ paddingVertical: 5, textAlign: "center" }}>{heading}</Text>
+                <Text style={{ paddingVertical: 5, textAlign: "center",color:"#222222" }}>{heading}</Text>
             </View>
 
         </TouchableOpacity >
@@ -22,8 +22,8 @@ const CategoryTile = props => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 100,
-        height: 130,
+        width: 80,
+        height: 110,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     tinyLogo: {
-        width: 100,
-        height: 130,
+        width: 80,
+        height: 110,
         borderRadius: 10,
         borderWidth: 1.75,
         borderColor: '#C0C0C0',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         position: 'absolute', bottom: -0, backgroundColor: '#FFFFFF', alignItems: 'center',
         justifyContent: 'center',
         opacity: 0.80,
-        width: 96,
+        width: 80,
         borderBottomLeftRadius: 9,
         borderBottomRightRadius: 9,
     },

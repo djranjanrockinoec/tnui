@@ -70,7 +70,7 @@ const DetailsScreen = props => {
             </View>
             <TinieButton
                 title="Later"
-                textStyle={{ color: '#00000' }}
+                textStyle={{ color: '#000000' }}
                 style={styles.laterButton}
                 onButtonPress={onLaterPress}
             />
