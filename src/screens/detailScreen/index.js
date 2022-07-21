@@ -3,14 +3,33 @@ import { View, TouchableOpacity, ScrollView, Text, StyleSheet, Image, Button, Al
 import InputBox from "../../components/inputBox";
 import tinieLogo from '../../assets/images/tinie-LOGO.png';
 import TinieButton from "../../components/button";
+import axios from "axios";
 
 const DetailsScreen = props => {
 
     const { navigation, route } = props;
-    const [number, setNumber] = useState(false);
+    const { otp, phNumber } = route?.params;
+    const [name, setName] = useState(false);
+
+    const sendDetails = async (name) => {
+
+        return await axios.post(`https://tiniev0updateuser.azurewebsites.net/api/v1/add-new-user`, {
+            phonenumber: phNumber,
+            username: name
+        })
+            .then((response) => {
+                console.log('response from API 4 is --->>>>>', response);
+                if (response.data.usernamewritestatus == 'OK')
+                    navigation.navigate(goBack);
+            })
+            .catch((error) => {
+                console.log("errror---->", error);
+
+            });
+    };
 
     const onDonePress = () => {
-        navigation.navigate('Dashboard');
+        sendDetails(name);
     }
 
     const onLaterPress = () => {
@@ -29,6 +48,9 @@ const DetailsScreen = props => {
                     inputTitle='Name'
                     keyboardType='numeric'
                     placeholderText='What do we call you ?'
+                    onChangeText={setName}
+                    value={name}
+
                 />
                 <View style={{
                     alignSelf: 'flex-end',
