@@ -12,6 +12,7 @@ const InputBox = ({ keyboardType, placeholderText, inputTitle, value, onChangeTe
                 placeholder={placeholderText}
                 keyboardType={keyboardType}
                 placeholderTextColor={'#858585'}
+                keyboardType='name-phone-pad'
             />
         </View>
     );

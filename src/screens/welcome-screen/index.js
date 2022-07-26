@@ -17,16 +17,21 @@ const WelcomeScreen = props => {
             .then((response) => {
                 console.log('response from API 1 is --->>>>>', response);
                 setEnlarge(response.data.action);
-                if (response.data.action == 'Register')
-                    navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber });
+
             })
             .catch((error) => {
                 console.log("errror---->", error);
-
+                setEnlarge(error.response.data.action);
+                // console.log(,enlarge)
+                // if (error.response.data.action == 'Register')
+                //     navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber });
             });
+
+
     };
 
     const sendOtp = async (otp, mobileNo) => {
+        console.log(otp)
         try {
             const res = await axios.get(`https://tiniev0loginbroker.azurewebsites.net/api/v1/get-token?phonenumber=${mobileNo}&otp=${otp}`);
             console.log('response from API 7 is --->>>>>', res);
@@ -34,6 +39,9 @@ const WelcomeScreen = props => {
                 navigation.navigate('Dashboard');
         } catch (error) {
             console.log("errror---->", error);
+
+            if (enlarge == 'Register')
+                navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber });
         }
     };
 
@@ -95,7 +103,7 @@ const WelcomeScreen = props => {
                 </View>
 
             </View>
-        </View >
+        </View>
 
     );
 };
