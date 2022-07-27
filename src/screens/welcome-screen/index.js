@@ -41,7 +41,8 @@ const WelcomeScreen = props => {
             console.log("errror---->", error);
 
             if (enlarge == 'Register')
-                navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber });
+                setOtp(null)
+            navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber, enlarge, setEnlarge });
         }
     };
 
