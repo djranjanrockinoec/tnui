@@ -24,6 +24,11 @@ const MerchantRegistration = () => {
 
     })
     const [isValid, setIsValid] = useState(false)
+    const [isValidOwnEmail, setIsValidOwnEmail] = useState(false)
+    const [isValidOwnNum, setIsValidOwnNum] = useState(false)
+    const [isValidOwnOtp, setIsValidOwnOtp] = useState(false)  
+    const [isValidOwnIDProof, setIsValidOwnIDProof] = useState(false)
+
     // const change = { checkChangeText CheckOwnName }
 
     const [managName, setManagName] = useState("")
@@ -36,22 +41,51 @@ const MerchantRegistration = () => {
     const ownTextChange = (text) => {
         if (text.length != 0) {
             setOwnName(text),
-                setIsValid(true)
-            // setCheckChangeText({
-            //     ...checkChangeText,
-            //     CheckOwnName: true
-            // }),
-            console.log(isValid)
-            console.log(ownName)
-
+            setIsValid(true)
         }
         else {
             setOwnName(text),
-                // setCheckChangeText({
-                //     ...checkChangeText,
-                //     CheckOwnName: false
-                // })
-                setIsValid(false)
+            setIsValid(false)
+        }
+    }
+    const ownEmailChange = (text) => {
+        if (text.length != 0) {
+            setOwnEmail(text),
+            setIsValidOwnEmail(true)
+        }
+        else {
+            setOwnEmail(text),
+            setIsValidOwnEmail(false)
+        }
+    }
+    const ownNumChange = (text) => {
+        if (text.length != 0) {
+            setOwnNumber(text),
+            setIsValidOwnNum(true)
+        }
+        else {
+            setOwnNumber(text),
+            setIsValidOwnNum(false)
+        }
+    }
+    const ownOTPChange = (text) => {
+        if (text.length != 0) {
+            setOwnNumOtp(text),
+            setIsValidOwnOtp(true)
+        }
+        else {
+            setOwnNumOtp(text),
+            setIsValidOwnOtp(false)
+    }
+}
+    const ownIDChange = (text) => {
+        if (text.length != 0) {
+            setOwnID(text),
+            setIsValidOwnIDProof(true)
+        }
+        else {
+            setOwnID(text),
+            setIsValidOwnIDProof(false)
         }
     }
 
@@ -80,23 +114,60 @@ const MerchantRegistration = () => {
                         <CustomHeaderText text={"Outlet Owner Details"} type={"SECONDARY"} />
                         <View>
                             {isValid ?
-                                <View style={{ alignItems: 'flex-start', marginVertical: 1, marginBottom: -20, backgroundColor: '#000', paddingHorizontal: 10, position: 'absolute' }}>
-                                    <Text style={{ padding: 10, backgroundColor: '#000', marginLeft: 14 }}>Name</Text>
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Name</Text>
                                 </View>
                                 :
                                 null
 
-                            }<View style={styles.inputCont}>
-                                <CustomInput placeholder={"Enter  Name*"} value={ownName} onChangeText={(text) => ownTextChange(text)}
-                                    text={'Name'}
-                                    change={isValid}
-
-                                />
+                            }
+                            <View>
+                                <CustomInput placeholder={"Enter  Name*"} value={ownName} onChangeText={(text) => ownTextChange(text)} />
                             </View>
-                            <CustomInput placeholder={'Enter Email ID*'} value={ownEmail} onChangeText={(text) => setOwnEmail(text)} />
-                            <CustomInput placeholder={'Mobile Number*'} value={ownNumber} onChangeText={(text) => setOwnNumber(text)} />
-                            <CustomInput placeholder={'Enter OTP Sent to the Mobile Number*'} value={ownNumOtp} onChangeText={(text) => setOwnNumOtp(text)} />
-                            <CustomInput placeholder={'Upload Proof of Identification*'} value={ownID} onChangeText={(text) => setOwnID(text)} />
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
+                            <CustomInput placeholder={'Enter Email ID*'} value={ownEmail} onChangeText={(text) => ownEmailChange(text)} />
+                            </View>
+                            <View>
+                            {isValidOwnNum ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Mobile Number</Text>
+                                </View>
+                                :
+                                null
+
+                            }
+                            <CustomInput placeholder={'Mobile Number*'} value={ownNumber} onChangeText={(text) => ownNumChange(text)} keyboardType={'numeric'} />
+                            </View>
+                            <View>
+                            {isValidOwnOtp ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>OTP</Text>
+                                </View>
+                                :
+                                null
+
+                            }
+                            <CustomInput placeholder={'Enter OTP Sent to the Mobile Number*'} value={ownNumOtp} onChangeText={(text) => ownOTPChange(text)} keyboardType={'numeric'} />
+                            </View>
+                            <View>
+                            {isValidOwnIDProof ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>ID Proof</Text>
+                                </View>
+                                :
+                                null
+
+                            }
+                            <CustomInput placeholder={'Upload Proof of Identification*'} value={ownID} onChangeText={(text) => ownIDChange(text)} />
+                            </View>
                         </View>
                         <View style={{ paddingVertical: 5 }} />
                         <View>
@@ -108,13 +179,64 @@ const MerchantRegistration = () => {
                     </View>
                     <View style={{ paddingVertical: 40 }}>
                         <CustomHeaderText text={"Outlet Manager Details"} type={"SECONDARY"} />
-                        <View>
+            
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
                             <CustomInput placeholder={"Enter  Name*"} value={managName} onChangeText={(text) => setManagName(text)} />
+                            </View>
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
                             <CustomInput placeholder={'Enter Email ID*'} value={managEmail} onChangeText={(text) => setManagEmail(text)} />
+                            </View>
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
                             <CustomInput placeholder={'Mobile Number*'} value={managNumber} onChangeText={(text) => setManagNumber(text)} />
+                            </View>
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
                             <CustomInput placeholder={'Enter OTP Sent to the Mobile Number*'} value={managNumOtp} onChangeText={(text) => setManagNumOtp(text)} />
+                            </View>
+                            <View>
+                            {isValidOwnEmail ?
+                                <View style={{ alignItems: 'flex-start',   paddingHorizontal: 4, position: 'absolute' ,zIndex:1}}>
+                                    <Text style={{ backgroundColor: '#fff', marginLeft: 16, paddingHorizontal:4 }}>Email ID</Text>
+                                </View>
+                                :
+                                null
+
+                            }
                             <CustomInput placeholder={'Upload Proof of Identification*'} value={managID} onChangeText={(text) => setManagID(text)} />
                         </View>
+                        
+
                         <View style={{ paddingVertical: 5 }} />
                         <View>
                             <Pressable style={styles.fileBtnCont} onPress={() => uploadBtn()}>
@@ -155,11 +277,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 25
     },
-    inputCont: {
-        borderWidth: 1,
-        borderColor: '#A3A1A1',
-        marginVertical: 10,
-        borderRadius: 10,
-        paddingHorizontal: 10
-    }
+
 })

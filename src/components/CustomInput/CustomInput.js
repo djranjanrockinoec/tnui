@@ -8,7 +8,7 @@ const CustomInput = ({ placeholder, value, onChangeText, keyboardType, }) => {
 
     return (
         <View
-        // style={styles.inputCont}
+        style={styles.inputCont}
         >
             {/* {changed ?
                 <View style={{ alignItems: 'flex-start', position: 'absolute', marginVertical: 1 }}>
