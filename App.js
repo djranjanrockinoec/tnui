@@ -19,6 +19,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import OnBoarding from './src/navigations/onBoardingStack';
+import MerchantRegistration from './src/screens/LoginFlowMerchant/login-screen/MerchantRegistration';
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -69,9 +70,10 @@ const App = () => {
   return (
     // <SafeAreaView style={backgroundStyle}>
     //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-    <NavigationContainer>
-      <OnBoardingScreensList />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <OnBoardingScreensList />
+    // </NavigationContainer>
+    <MerchantRegistration />
     // </SafeAreaView>
   );
 };
