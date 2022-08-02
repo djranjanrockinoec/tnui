@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\1e9710411ec31dc5821794f1eb3c3027\\transformed\\jetified-ucrop-2.2.6-native\\res\\values-sk\\values-sk.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,182",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "120,177,228"
+                    },
+                    "to": {
+                        "startLines": "49,50,51",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "5268,5338,5395",
+                        "endColumns": "69,56,50",
+                        "endOffsets": "5333,5390,5441"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-3\\262b500caff10c91b365553fa64af4cd\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-sk\\values.xml",
                     "from": {
                         "startLines": "4",

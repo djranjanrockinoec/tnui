@@ -4,7 +4,7 @@ import React from 'react'
 const CustomActiveLine = ({ text, type }) => {
     return (
         <View style={styles.root}>
-            <View style={[styles.line, styles[`line_${type}`]]} ><Text></Text></View>
+            <View style={[styles.line, styles[`line_${type}`]]}></View>
             <View style={[styles.dot, styles[`dot_${type}`]]} />
             <Text style={[styles.text, styles[`text_${type}`]]}>{text}</Text>
         </View>
@@ -20,24 +20,25 @@ const styles = StyleSheet.create({
     },
     line: {
         backgroundColor: '#065987',
-        width: "33%",
+        width: "50%",
         height: 3.3,
         borderTopLeftRadius: 25,
         borderBottomLeftRadius: 25,
-        marginLeft: 5
+        borderRadius:50
+        // marginLeft: 5
     },
     line_SECONDARY: {
         backgroundColor: '#A3a1a1',
-        width: "33%",
+        width: "45%",
         height: 2.3,
         borderTopLeftRadius: 25,
         borderBottomLeftRadius: 25,
-
+        paddingLeft: 5
     },
     dot: {
         backgroundColor: '#065987',
-        width: 13,
-        height: 13,
+        width: 12,
+        height: 12,
         borderRadius: 25
     },
     dot_SECONDARY: {
@@ -48,7 +49,8 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#000',
-        paddingLeft: 3
+        paddingLeft: 3,
+        fontSize:11
     },
     text_SECONDARY: {
         color: '#A3a1a1'

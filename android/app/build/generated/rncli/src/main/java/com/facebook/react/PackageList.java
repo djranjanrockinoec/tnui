@@ -17,12 +17,14 @@ import com.reactnativecommunity.geolocation.GeolocationPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // react-native-fast-image
 import com.dylanvann.fastimage.FastImageViewPackage;
-// react-native-maps
-import com.airbnb.android.react.maps.MapsPackage;
 // react-native-geolocation-service
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
+// react-native-image-crop-picker
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+// react-native-maps
+import com.airbnb.android.react.maps.MapsPackage;
 // react-native-permissions
 import com.zoontek.rnpermissions.RNPermissionsPackage;
 // react-native-safe-area-context
@@ -81,9 +83,10 @@ public class PackageList {
       new GeolocationPackage(),
       new RNCMaskedViewPackage(),
       new FastImageViewPackage(),
-      new MapsPackage(),
       new RNFusedLocationPackage(),
       new RNGestureHandlerPackage(),
+      new PickerPackage(),
+      new MapsPackage(),
       new RNPermissionsPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

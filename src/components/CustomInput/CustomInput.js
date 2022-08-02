@@ -3,8 +3,6 @@ import React, { useState } from 'react'
 
 const CustomInput = ({ placeholder, value, onChangeText, keyboardType, }) => {
 
-    // const changed = { change }
-    // console.log(changed)
 
     return (
         <View
@@ -16,7 +14,6 @@ const CustomInput = ({ placeholder, value, onChangeText, keyboardType, }) => {
                 </View>
                 :
                 null
-
             } */}
 
             <TextInput
@@ -27,7 +24,6 @@ const CustomInput = ({ placeholder, value, onChangeText, keyboardType, }) => {
                 keyboardType={keyboardType}
                 placeholderTextColor={'#858585'}
             />
-
         </View>
     )
 }
@@ -38,7 +34,8 @@ const styles = StyleSheet.create({
         borderColor: '#A3A1A1',
         marginVertical: 10,
         borderRadius: 10,
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
+        marginVertical:15
     },
     input: {
         fontSize: 12

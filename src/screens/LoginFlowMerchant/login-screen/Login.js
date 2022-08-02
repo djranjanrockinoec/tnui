@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, Image, Dimensions } from 'react-native'
+import { StyleSheet, Text, View, Pressable, Image, Dimensions, Modal } from 'react-native'
 import React, { useState } from 'react';
 import Header from '../../../components/header'
 import CustomInput from '../../../components/CustomInput/CustomInput';
@@ -7,17 +7,16 @@ import CustomBtn from '../../../components/CustomBtn/CustomBtn';
 
 const Login = () => {
 
-  const [email, setEmail] = useState('')
-  const [emailOtp, setEmailOtp] = useState('')
+  const [number, setnumber] = useState('')
   const [numberOtp, setNumberOtp] = useState('')
+  const [showModal, setShowModal] = useState(false);
 
-
-  const [check, setCheck] = useState(false)
 
   const windowWidth = Dimensions.get('window').width;
 
   const onLogin = () => {
     console.log('btn pressed ')
+    setShowModal(!showModal) 
   }
 
   const forgetPass = () => {
@@ -26,53 +25,52 @@ const Login = () => {
 
   return (
     <View style={styles.root}>
-      <Header text={"Login"} type='PRIMARY' />
-      <View style={{ paddingVertical: 10 }} />
+      <Header text={"Host your business"} type='PRIMARY' />
+
       <View style={{ justifyContent: 'space-around', flex: 1 }}>
-        <View>
+        <View style={{ flex: 2, justifyContent: 'center', }}>
           <View style={styles.mainCont}>
-            <CustomInput placeholder={"Enter Email ID*"} value={email} onChangeText={(text) => setEmail(text)} />
-            <CustomInput placeholder={"Enter OTP Sent to Your Email*"} value={emailOtp} onChangeText={(text) => setEmailOtp(text)} />
-            <CustomInput placeholder={"Enter OTP Sent to Your Registered Mobile Number*"} value={numberOtp} onChangeText={(text) => setNumberOtp(text)} />
+            <CustomInput placeholder={"Mobile Number*"} value={number} onChangeText={(text) => setnumber(text)} />
+            <CustomInput placeholder={"OTP sent to Phone number"} value={numberOtp} onChangeText={(text) => setNumberOtp(text)} />
           </View>
           <View style={{ paddingVertical: 5 }} />
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20 }}>
-            <Pressable onPress={() => setCheck(!check)}>
-              {!check ? (
-                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                  <View style={{ borderWidth: 1, borderColor: '#a3a1a1', width: 18, height: 18 }}></View>
-                  <Text style={styles.textSize}>  Remember me</Text>
-                </View>
-              ) : (
-                <View style={{ flexDirection: 'row' }}>
-                  <View style={{ borderWidth: 1, borderColor: '#a3a1a1', width: 18, height: 18, justifyContent: 'center', alignItems: 'center' }}><View style={{ backgroundColor: '#858585', position: 'absolute', width: 14.5, height: 14.5 }}></View></View>
-                  <Text style={styles.textSize}>  Remember me</Text>
-                </View>
+            <Pressable onPress={() => navigation.goBack()}>
 
-              )}
-
+              <Text style={styles.textSize}>CANCEL</Text>
             </Pressable>
-            <View>
-              <Pressable onPress={() => forgetPass()}>
-                <Text style={styles.textSize}>Forget password ?</Text>
+            <View style={{ flexDirection: 'row' }}>
+              <Pressable onPress={() => resendOtp()}>
+                <Text style={[styles.textSize, { textDecorationLine: 'underline', paddingHorizontal: 5, color: "#000" }]}>Resend OTP,</Text>
               </Pressable>
+              <Text style={styles.textSize}>If not received</Text>
             </View>
           </View>
           <View style={{ paddingVertical: 20 }} />
-          <View>
-            <CustomBtn text={'Login'} onPress={() => onLogin()} />
-          </View>
         </View>
-        <View>
-          <View style={styles.imgView}>
-            <Image source={require('../../../assets/images/tinie-LOGO.png')} style={styles.imgCont} resizeMode="contain" />
-          </View>
-          <View style={{ paddingVertical: 20 }} />
-
+        <View style={{ paddingVertical: 40 }}>
+          <CustomBtn text={'Login'} onPress={() => onLogin()} />
         </View>
       </View>
-
-
+      <Modal
+        animationType={'fade'}
+        transparent={true}
+        visible={showModal}
+      >
+        <View style={styles.modelCont}>
+          <View style={styles.modelView}>
+            <Text style={styles.modalText}>ENTER PASSCODE</Text>
+            <View style={styles.btmBtn}>
+              <View style={{flexGrow:1}}>
+            <Pressable onPress={() => setShowModal(!showModal)}><Text style={{color:"#fff"}}>Cancel</Text></Pressable>
+            </View>
+            <View style={{flexGrow:1}}>
+            <Pressable onPress={() => setShowModal(!showModal)} ><Text style={styles.modalBtn}>Enter</Text></Pressable>
+            </View>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   )
 }
@@ -87,7 +85,8 @@ const styles = StyleSheet.create({
     padding: 15
   },
   textSize: {
-    fontSize: 12
+    fontSize: 12,
+    color: "#000"
   },
   imgView: {
     alignItems: 'center',
@@ -101,6 +100,60 @@ const styles = StyleSheet.create({
     width: "33%",
     height: 55,
   },
+  modelCont: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modelView: {
+    justifyContent: 'space-between',
+    paddingVertical: 15,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    backgroundColor: '#353535',
+    borderRadius: 10,
+    height: 353,
+    width: 255,
+    alignItems: 'center',
+    // borderColor: '#0F8989',
+    // borderWidth: 1
+  },
+  modalText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: "#fff"
+  },
+  modalBtn: {
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    textAlign: 'center',
+    backgroundColor: '#34EBEB',
+    borderRadius: 12,
+    width: "50%",
+    elevation: 1.5,
+    shadowColor: '#470000',
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    color: '#000',
+    fontSize: 16,
+    fontWeight: "400"
+  },
+  btmBtn:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    width:"100%",
+    paddingHorizontal:20
+    // justifyContent:'space-around'
+
+  }
 
 
 })

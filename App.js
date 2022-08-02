@@ -21,6 +21,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import OnBoarding from './src/navigations/onBoardingStack';
 import MerchantRegistration from './src/screens/LoginFlowMerchant/login-screen/MerchantRegistration';
 
+import Signup from './src/screens/LoginFlowMerchant/login-screen/Signup';
+
+import BusinessInfo from './src/screens/LoginFlowMerchant/BusinessInfo';
+import BusinessAdr from './src/screens/LoginFlowMerchant/login-screen/BusinessAdr';
+import FurtherAss from './src/screens/LoginFlowMerchant/login-screen/FurtherAss';
+import SetPasscode from './src/screens/LoginFlowMerchant/login-screen/SetPasscode';
+import ForgetPasscode from './src/screens/LoginFlowMerchant/login-screen/ForgetPasscode';
+import ResetPasscode from './src/screens/LoginFlowMerchant/login-screen/ResetPasscode';
+import Login from './src/screens/LoginFlowMerchant/login-screen/Login';
+
+
+
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -73,7 +85,17 @@ const App = () => {
     // <NavigationContainer>
     //   <OnBoardingScreensList />
     // </NavigationContainer>
-    <MerchantRegistration />
+    // <MerchantRegistration />
+    // <BusinessInfo/>
+    // <BusinessAdr/>
+    // <FurtherAss/>
+  //  <SignUpWelcome/>
+//  <Signup/>
+// <SetPasscode/> 
+// <ForgetPasscode/> 
+//  <ResetPasscode/> 
+<Login/> 
+   
     // </SafeAreaView>
   );
 };
