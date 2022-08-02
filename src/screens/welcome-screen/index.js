@@ -3,19 +3,47 @@ import { View, TouchableOpacity, ScrollView, Text, StyleSheet, Image, Button, Al
 import InputBox from "../../components/inputBox";
 import tinieLogo from '../../assets/images/tinie-LOGO.png';
 import TinieButton from "../../components/button";
+import axios from "axios";
 
 const WelcomeScreen = props => {
-
+    const [phNumber, onChangeNumber] = React.useState(null);
     const { navigation, route } = props;
-    const [number, setNumber] = useState(false);
+    const [otp, setOtp] = useState(null);
+    const [enlarge, setEnlarge] = useState(null);
+
+    const sendPhNumber = async (mobileNo) => {
+
+        return await axios.get(`https://tiniev0loginbroker.azurewebsites.net/api/v1/login-broker`, { params: { phonenumber: mobileNo } })
+            .then((response) => {
+                console.log('response from API 1 is --->>>>>', response);
+                setEnlarge(response.data.action);
+                if (response.data.action == 'Register')
+                    navigation.navigate('DetailsScreen', { otp: otp, phNumber: phNumber });
+            })
+            .catch((error) => {
+                console.log("errror---->", error);
+
+            });
+    };
+
+    const sendOtp = async (otp, mobileNo) => {
+        try {
+            const res = await axios.get(`https://tiniev0loginbroker.azurewebsites.net/api/v1/get-token?phonenumber=${mobileNo}&otp=${otp}`);
+            console.log('response from API 7 is --->>>>>', res);
+            if (res.data.username)
+                navigation.navigate('Dashboard');
+        } catch (error) {
+            console.log("errror---->", error);
+        }
+    };
 
     const onEnterPress = () => {
-        setNumber(true);
-        // Alert.alert('Wrong OTP entered !!');
+        sendPhNumber(phNumber);
+        console.log('THE USER MOBILE NUMBER IS --->', phNumber);
     }
 
     const onRegisterPress = () => {
-        navigation.navigate('DetailsScreen');
+        sendOtp(otp, phNumber);
     }
     return (
         <View style={styles.container}>
@@ -29,12 +57,16 @@ const WelcomeScreen = props => {
                 <InputBox
                     keyboardType='numeric'
                     placeholderText='Enter Your Phone Number'
+                    onChangeText={onChangeNumber}
+                    value={phNumber}
                 />
-                {number &&
+                {enlarge &&
                     <>
                         <InputBox
                             keyboardType='numeric'
                             placeholderText='enter OTP'
+                            onChangeText={setOtp}
+                            value={otp}
                         />
                         <View style={{ flexDirection: "row", justifyContent: 'space-between', marginHorizontal: 12 }}>
                             <Text style={{ fontSize: 10 }}>cancel</Text>
@@ -44,12 +76,12 @@ const WelcomeScreen = props => {
 
                 }
                 <View style={{
-                    alignSelf: number ? 'flex-end' : 'center',
+                    alignSelf: otp ? 'flex-end' : 'center',
                     marginVertical: 25,
                 }}>
-                    {number ?
+                    {enlarge !== null ?
                         <TinieButton
-                            title={"Register"}
+                            title={enlarge}
                             style={{ backgroundColor: '#1B92AD', width: 150, height: 50, marginRight: 10, }}
                             onButtonPress={onRegisterPress}
                             textStyle={{ color: '#ffffff' }}
