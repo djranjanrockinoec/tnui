@@ -8,8 +8,9 @@ import axios from "axios";
 const DetailsScreen = props => {
 
     const { navigation, route } = props;
-    const { otp, phNumber } = route?.params;
+    const { otp, phNumber, enlarge, setEnlarge } = route?.params;
     const [name, setName] = useState(false);
+    // const [large, setLarge] = useState('')
 
     const sendDetails = async (name) => {
 
@@ -20,7 +21,13 @@ const DetailsScreen = props => {
             .then((response) => {
                 console.log('response from API 4 is --->>>>>', response);
                 if (response.data.usernamewritestatus == 'OK')
-                    navigation.navigate(goBack);
+                    setEnlarge(null)
+
+                navigation.navigate("Welcome", {
+                    setEnlarge
+                });
+
+
             })
             .catch((error) => {
                 console.log("errror---->", error);
@@ -46,10 +53,11 @@ const DetailsScreen = props => {
             <View style={{ flex: 1, }}>
                 <InputBox
                     inputTitle='Name'
-                    keyboardType='numeric'
+                    keyboardType='name-phone-pad'
                     placeholderText='What do we call you ?'
                     onChangeText={setName}
                     value={name}
+
 
                 />
                 <View style={{
@@ -74,7 +82,7 @@ const DetailsScreen = props => {
                 style={styles.laterButton}
                 onButtonPress={onLaterPress}
             />
-        </View >
+        </View>
 
     );
 };
