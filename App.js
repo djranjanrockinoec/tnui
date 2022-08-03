@@ -67,12 +67,14 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    // <SafeAreaView style={backgroundStyle}>
+    <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
     <NavigationContainer>
       <OnBoardingScreensList />
     </NavigationContainer>
-    </SafeAreaView>
+    </>
+    // </SafeAreaView>
   );
 };
 
