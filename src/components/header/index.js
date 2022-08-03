@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
 
     },
     headText: {
-        fontWeight: "700",
+        fontWeight: "800",
         color: '#000',
         textAlign: 'left',
         paddingLeft: 20,

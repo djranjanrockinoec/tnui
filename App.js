@@ -19,6 +19,8 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import OnBoarding from './src/navigations/onBoardingStack';
+import PrivacyPolicy from './src/screens/LoginFlowMerchant/login-screen/PrivacyPolicy';
+import TermsandConditions from './src/screens/LoginFlowMerchant/login-screen/TermsandConditions';
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -68,13 +70,14 @@ const App = () => {
 
   return (
     // <SafeAreaView style={backgroundStyle}>
-    <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-    <NavigationContainer>
-      <OnBoardingScreensList />
-    </NavigationContainer>
-    </>
+    // <>
+    //   <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    // <NavigationContainer>
+    //   <OnBoardingScreensList />
+    // </NavigationContainer>
+    // </>
     // </SafeAreaView>
+    <TermsandConditions/>
   );
 };
 

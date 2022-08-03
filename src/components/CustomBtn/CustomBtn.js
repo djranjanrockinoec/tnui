@@ -2,7 +2,6 @@ import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-nati
 import React from 'react'
 
 
-
 const CustomBtn = ({ text, onPress, type}) => {
 
     const windowWidth = Dimensions.get('window').width;
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         backgroundColor: '#34EBEB',
         borderRadius: 50,
-        width: "50%",
+        width: "60%",
         elevation: 1.5,
         shadowColor: '#470000',
         shadowOffset: { width: 1, height: 1 },
